@@ -118,7 +118,7 @@ const App: React.FC = () => {
           <div className="flex">
             {/* Removed border-r here as requested */}
             <div className="px-3 py-2 flex items-center font-bold">
-              © 2025 KALI IVANOVA
+              © 2026 KALI IVANOVA
             </div>
           </div>
 
@@ -338,15 +338,15 @@ const App: React.FC = () => {
               <a href="mailto:hellokaliivanova@gmail.com" className="hover:underline mb-2 md:mb-0">
                 hellokaliivanova@gmail.com
               </a>
-              <a href="https://instagram.com/kaliivanova" target="_blank" rel="noreferrer" className="hover:underline">
-                IG @kaliivanova
+              <a href="https://www.instagram.com/kaliiivanova/" target="_blank" rel="noreferrer" className="hover:underline">
+                IG @kaliiivanova
               </a>
             </div>
 
             <button
               type="button"
               aria-label="Cerrar"
-              className="fixed top-4 right-4 md:top-6 md:right-6 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center border-2 border-transparent bg-transparent hover:border-black hover:bg-black hover:text-white transition-colors z-[70] font-bold md:text-xl rounded-full"
+              className="fixed top-4 right-4 md:top-6 md:right-6 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center border border-black bg-transparent hover:bg-black hover:text-white transition-colors z-[70] font-bold md:text-xl"
               onClick={closeAbout}
             >
               ✕
