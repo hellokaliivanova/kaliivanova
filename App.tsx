@@ -1,9 +1,6 @@
 import React from 'react';
 import { Project } from './types';
-import sobreMiMobile from '/images/sobre-mi/movil-sobre-mi.svg';
-import sobreMiTablet from '/images/sobre-mi/tablet-sobre-mi.svg';
-import sobreMiDesktop from '/images/sobre-mi/escritorio-sobre-mi.svg';
-
+import kImage from '/images/sobre-mi/K.webp';
 // Import all media that live under /images/projects/<projectId> using Vite's glob import.
 // Vite replaces the values with resolved URLs during build.
 const imageModules = import.meta.glob('/images/projects/**/*.{jpg,jpeg,png,webp,gif,avif,svg,mp4,webm,ogg}', {
@@ -253,24 +250,103 @@ const App: React.FC = () => {
 
       {/* Modal Sobre mí */}
       {isAboutOpen && (
-        <div
-          className="fixed inset-0 z-[60] bg-white/30 backdrop-blur-lg text-black"
-          onClick={closeAbout}
-        >
-          <div className="relative w-full h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
-            <picture className="w-full h-full">
-              <source media="(min-width: 1024px)" srcSet={sobreMiDesktop} />
-              <source media="(min-width: 768px)" srcSet={sobreMiTablet} />
+        <div className="fixed inset-0 z-[60] bg-white text-black overflow-y-auto md:overflow-hidden w-full h-full normal-case">
+          <div className="min-h-full md:h-full flex flex-col p-6 md:p-8">
+
+            {/* Top row with 4 columns */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 mb-4 md:mb-6 text-sm font-bold tracking-normal leading-snug">
+
+              {/* Col 1 */}
+              <div className="flex flex-col gap-2 md:gap-4">
+                <h2>Kalina Ivanova</h2>
+                <p className="text-xs md:text-sm">
+                  Diseñadora gráfica y durante estos<br />
+                  años he desarrollado proyectos en<br />
+                  todas las áreas del diseño, tanto en el<br />
+                  ámbito cultural como comercial. Mi<br />
+                  metodología se basa en una constante<br />
+                  búsqueda de nuevas formas de crear<br />
+                  sistemas e ideas que comuniquen de<br />
+                  la mejor manera un concepto. Detrás<br />
+                  de una identidad debe haber una<br />
+                  narrativa y comunicar un mensaje que<br />
+                  crea un vínculo con el público. Ya sea a<br />
+                  través de la divulgación, la sorpresa,<br />
+                  la nostalgia o la estética.
+                </p>
+              </div>
+
+              {/* Col 2 */}
+              <div className="flex flex-col gap-2 md:gap-4 text-xs md:text-sm">
+                <h2>Logros</h2>
+                <div>
+                  <p className="mb-2 md:mb-4">
+                    (2024) Premio ADCV ORO<br />
+                    Premios ADCV<br />
+                    Proyecto: Kopriva
+                  </p>
+                  <p>
+                    Edición Selekted 2024<br />
+                    Proyecto seleccionado: New<br />
+                    Talent (Estudiante)<br />
+                    Proyecto: Kopriva
+                  </p>
+                </div>
+              </div>
+
+              {/* Col 3 */}
+              <div className="flex flex-col gap-2 md:gap-4 text-xs md:text-sm">
+                <h2>Exposiciones</h2>
+                <div>
+                  <p>
+                    Exposición en LAS NAVES<br />
+                    Premios ADCV 2024<br />
+                    Proyecto: Kopriva
+                  </p>
+                </div>
+              </div>
+
+              {/* Col 4 */}
+              <div className="flex flex-col gap-2 md:gap-4 text-xs md:text-sm">
+                <h2>Estudios</h2>
+                <div>
+                  <p className="mb-2 md:mb-4">
+                    (2019) Grado<br />
+                    en Diseño gráfico
+                  </p>
+                  <p>
+                    (2024) Máster Oficial<br />
+                    en Diseño de<br />
+                    Publicaciones<br />
+                    Analógicas y Digitales
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Center image - flex-1 min-h-0 allows it to shrink to fit remaining space */}
+            <div className="flex-1 min-h-0 flex items-center justify-center py-4 md:py-2 px-4">
               <img
-                src={sobreMiMobile}
-                alt="Sobre Mí"
-                className="w-full h-full object-cover mix-blend-multiply opacity-90"
+                src={kImage}
+                alt="K"
+                className="w-full h-full max-w-4xl object-contain"
               />
-            </picture>
+            </div>
+
+            {/* Bottom row */}
+            <div className="mt-4 flex flex-col md:flex-row justify-between items-center md:items-end font-bold text-xs md:text-sm">
+              <a href="mailto:hellokaliivanova@gmail.com" className="hover:underline mb-2 md:mb-0">
+                hellokaliivanova@gmail.com
+              </a>
+              <a href="https://instagram.com/kaliivanova" target="_blank" rel="noreferrer" className="hover:underline">
+                IG @kaliivanova
+              </a>
+            </div>
+
             <button
               type="button"
               aria-label="Cerrar"
-              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center border border-black bg-white hover:bg-black hover:text-white transition-colors z-10 font-bold"
+              className="fixed top-4 right-4 md:top-6 md:right-6 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center border-2 border-transparent bg-transparent hover:border-black hover:bg-black hover:text-white transition-colors z-[70] font-bold md:text-xl rounded-full"
               onClick={closeAbout}
             >
               ✕
