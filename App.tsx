@@ -1,6 +1,8 @@
 import React from 'react';
 import { Project } from './types';
-import sobreMiImage from '/images/sobre-mi/menu-sobre-mi.webp';
+import sobreMiMobile from '/images/sobre-mi/movil-sobre-mi.svg';
+import sobreMiTablet from '/images/sobre-mi/tablet-sobre-mi.svg';
+import sobreMiDesktop from '/images/sobre-mi/escritorio-sobre-mi.svg';
 
 // Import all media that live under /images/projects/<projectId> using Vite's glob import.
 // Vite replaces the values with resolved URLs during build.
@@ -256,11 +258,15 @@ const App: React.FC = () => {
           onClick={closeAbout}
         >
           <div className="relative w-full h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
-            <img
-              src={sobreMiImage}
-              alt="Sobre Mí"
-              className="w-full h-full object-cover mix-blend-multiply opacity-90"
-            />
+            <picture className="w-full h-full">
+              <source media="(min-width: 1024px)" srcSet={sobreMiDesktop} />
+              <source media="(min-width: 768px)" srcSet={sobreMiTablet} />
+              <img
+                src={sobreMiMobile}
+                alt="Sobre Mí"
+                className="w-full h-full object-cover mix-blend-multiply opacity-90"
+              />
+            </picture>
             <button
               type="button"
               aria-label="Cerrar"
