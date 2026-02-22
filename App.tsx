@@ -255,7 +255,7 @@ const App: React.FC = () => {
           className="fixed inset-0 z-[60] bg-white/30 backdrop-blur-lg text-black"
           onClick={closeAbout}
         >
-          <div className="relative w-screen h-screen flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+          <div className="relative w-full h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
             <img
               src={sobreMiImage}
               alt="Sobre Mí"
@@ -264,7 +264,7 @@ const App: React.FC = () => {
             <button
               type="button"
               aria-label="Cerrar"
-              className="absolute top-0 right-0 px-3 py-2 border-b border-l border-black bg-white hover:bg-black hover:text-white transition-colors z-10 font-bold"
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center border border-black bg-white hover:bg-black hover:text-white transition-colors z-10 font-bold"
               onClick={closeAbout}
             >
               ✕
