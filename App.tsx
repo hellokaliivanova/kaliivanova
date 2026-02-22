@@ -250,7 +250,7 @@ const App: React.FC = () => {
 
       {/* Modal Sobre mí */}
       {isAboutOpen && (
-        <div className="fixed inset-0 z-[60] bg-white text-black overflow-y-auto md:overflow-hidden w-full h-full normal-case">
+        <div className="fixed inset-0 z-[60] bg-white/40 backdrop-blur-md text-black overflow-y-auto md:overflow-hidden w-full h-full normal-case">
           <div className="min-h-full md:h-full flex flex-col p-6 md:p-8">
 
             {/* Top row with 4 columns */}
