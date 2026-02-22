@@ -325,11 +325,11 @@ const App: React.FC = () => {
             </div>
 
             {/* Center image - flex-1 min-h-0 allows it to shrink to fit remaining space */}
-            <div className="flex-1 min-h-0 flex items-center justify-center py-4 md:py-2 px-4">
+            <div className="flex-1 min-h-0 flex items-center justify-center py-4 md:py-0 md:-mt-10 relative z-10">
               <img
                 src={kImage}
                 alt="K"
-                className="w-full h-full max-w-4xl object-contain"
+                className="w-full h-full max-w-5xl object-contain"
               />
             </div>
 
