@@ -254,12 +254,12 @@ const App: React.FC = () => {
           <div className="min-h-full md:h-full flex flex-col p-6 md:p-8">
 
             {/* Top row with 4 columns */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 mb-4 md:mb-6 text-sm font-bold tracking-normal leading-snug">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 mb-4 md:mb-6 text-[16pt] font-[650] tracking-normal leading-[16pt]">
 
               {/* Col 1 */}
               <div className="flex flex-col gap-2 md:gap-4">
                 <h2>Kalina Ivanova</h2>
-                <p className="text-xs md:text-sm">
+                <p>
                   Diseñadora gráfica y durante estos<br />
                   años he desarrollado proyectos en<br />
                   todas las áreas del diseño, tanto en el<br />
@@ -277,7 +277,7 @@ const App: React.FC = () => {
               </div>
 
               {/* Col 2 */}
-              <div className="flex flex-col gap-2 md:gap-4 text-xs md:text-sm">
+              <div className="flex flex-col gap-2 md:gap-4">
                 <h2>Logros</h2>
                 <div>
                   <p className="mb-2 md:mb-4">
@@ -295,7 +295,7 @@ const App: React.FC = () => {
               </div>
 
               {/* Col 3 */}
-              <div className="flex flex-col gap-2 md:gap-4 text-xs md:text-sm">
+              <div className="flex flex-col gap-2 md:gap-4">
                 <h2>Exposiciones</h2>
                 <div>
                   <p>
@@ -307,7 +307,7 @@ const App: React.FC = () => {
               </div>
 
               {/* Col 4 */}
-              <div className="flex flex-col gap-2 md:gap-4 text-xs md:text-sm">
+              <div className="flex flex-col gap-2 md:gap-4">
                 <h2>Estudios</h2>
                 <div>
                   <p className="mb-2 md:mb-4">
@@ -334,7 +334,7 @@ const App: React.FC = () => {
             </div>
 
             {/* Bottom row */}
-            <div className="mt-4 flex flex-col md:flex-row justify-between items-center md:items-end font-bold text-xs md:text-sm">
+            <div className="mt-4 flex flex-col md:flex-row justify-between items-center md:items-end font-[650] text-[16pt] leading-[16pt]">
               <a href="mailto:hellokaliivanova@gmail.com" className="hover:underline mb-2 md:mb-0">
                 hellokaliivanova@gmail.com
               </a>
