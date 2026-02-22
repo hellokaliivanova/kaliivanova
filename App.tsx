@@ -1,6 +1,6 @@
 import React from 'react';
 import { Project } from './types';
-import sobreMiSVG from '/images/sobre-mi/portfolio kaliivanova.svg';
+import sobreMiImage from '/images/sobre-mi/menu-sobre-mi.webp';
 
 // Import all media that live under /images/projects/<projectId> using Vite's glob import.
 // Vite replaces the values with resolved URLs during build.
@@ -131,9 +131,9 @@ const App: React.FC = () => {
             <button
               type="button"
               onClick={() => setIsAboutOpen(true)}
-              className="px-3 py-2 border-l border-black hover:bg-black group transition-colors flex items-center"
+              className="px-3 py-2 border-l border-black hover:bg-black hover:text-white transition-colors flex items-center"
             >
-              <img src={sobreMiSVG} alt="SOBRE MÍ" className="h-3 w-auto group-hover:invert transition-all" />
+              SOBRE MÍ
             </button>
           </div>
         </div>
@@ -257,7 +257,7 @@ const App: React.FC = () => {
         >
           <div className="relative w-full h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
             <img
-              src={sobreMiSVG}
+              src={sobreMiImage}
               alt="Sobre Mí"
               className="w-full h-full object-cover mix-blend-multiply opacity-90"
             />
