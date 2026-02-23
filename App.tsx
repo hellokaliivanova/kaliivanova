@@ -177,7 +177,7 @@ const App: React.FC = () => {
 
                 {/* 1. Render First Images */}
                 {firstImages.map((media, i) => {
-                  const isVideo = media.toLowerCase().match(/\.(mp4|webm|ogg)$/i);
+                  const isVideo = media.toLowerCase().match(/\.(mp4|webm|ogg)(\?.*)?$/i);
                   return (
                     <div key={`media-start-${i}`} className="shrink-0 w-auto h-[350px] md:h-[388px] snap-start">
                       {isVideo ? (
@@ -210,7 +210,7 @@ const App: React.FC = () => {
 
                 {/* 3. Render Remaining Images */}
                 {remainingImages.map((media, i) => {
-                  const isVideo = media.toLowerCase().match(/\.(mp4|webm|ogg)$/i);
+                  const isVideo = media.toLowerCase().match(/\.(mp4|webm|ogg)(\?.*)?$/i);
                   return (
                     <div key={`media-end-${i}`} className="shrink-0 w-auto h-[350px] md:h-[388px] snap-start">
                       {isVideo ? (
