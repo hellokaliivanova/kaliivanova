@@ -87,7 +87,7 @@ const ProjectDescriptionCard: React.FC<{ project: Project }> = ({ project }) => 
   };
 
   return (
-    <div className="shrink-0 relative w-screen md:min-w-[310px] md:w-[310px] h-[350px] md:h-[388px] p-4 md:p-8 text-left leading-relaxed normal-case text-sm md:text-base flex flex-col justify-between overflow-hidden snap-start bg-black text-white">
+    <div className="shrink-0 relative w-screen md:min-w-[310px] md:w-[310px] h-[350px] md:h-[388px] p-4 md:p-8 text-left leading-[11pt] text-[11pt] normal-case flex flex-col justify-between overflow-hidden snap-start bg-black text-white">
       <div ref={scrollRef} className="overflow-y-auto pr-2 custom-scrollbar h-full" onScroll={handleScroll}>
         <p className="whitespace-pre-wrap">{project.description}</p>
       </div>
@@ -109,7 +109,7 @@ const App: React.FC = () => {
   const closeAbout = () => setIsAboutOpen(false);
 
   return (
-    <div className="min-h-screen w-full flex flex-col font-sans uppercase text-xs md:text-sm leading-tight tracking-tight bg-white text-black">
+    <div className="min-h-screen w-full flex flex-col font-sans uppercase text-xs md:text-sm leading-[1.1] tracking-tight bg-white text-black">
       {/* Top Navigation */}
       {/* Removed border-b from header to merge with project data */}
       <header className="sticky top-0 z-50 bg-white">
@@ -117,7 +117,7 @@ const App: React.FC = () => {
           {/* Left Side */}
           <div className="flex">
             {/* Removed border-r here as requested */}
-            <div className="px-3 py-2 flex items-center font-bold">
+            <div className="px-3 py-2 flex items-center">
               © 2026 KALI IVANOVA
             </div>
           </div>
@@ -139,8 +139,8 @@ const App: React.FC = () => {
 
         {/* Filter Bar / Column Headers */}
         <div className="grid grid-cols-3 border-t border-b border-black bg-white">
-          <div className="px-3 py-2 font-semibold">PROYECTO</div>
-          <div className="px-3 py-2 font-semibold">CATEGORÍA</div>
+          <div className="px-3 py-2">PROYECTO</div>
+          <div className="px-3 py-2">CATEGORÍA</div>
           <div className="px-3 py-2 flex justify-between text-gray-400">
             {/* Empty space */}
           </div>
@@ -161,7 +161,7 @@ const App: React.FC = () => {
               {/* Project Header Row - Made Sticky */}
               {/* Adjusted top value slightly to ensure overlap (60px mobile, 66px desktop) */}
               <div className="grid grid-cols-1 md:grid-cols-3 border-b border-black bg-white sticky top-[60px] md:top-[66px] z-40">
-                <div className="px-3 py-2 border-b md:border-b-0 flex items-center font-bold">
+                <div className="px-3 py-2 border-b md:border-b-0 flex items-center">
                   {project.name}
                 </div>
                 <div className="px-3 py-2 border-b md:border-b-0 flex items-center">
@@ -177,7 +177,7 @@ const App: React.FC = () => {
 
                 {/* 1. Render First Images */}
                 {firstImages.map((media, i) => {
-                  const isVideo = media.toLowerCase().match(/\.(mp4|webm|ogg)$/i);
+                  const isVideo = media.toLowerCase().match(/\.(mp4|webm|ogg)(\?.*)?$/i);
                   return (
                     <div key={`media-start-${i}`} className="shrink-0 w-auto h-[350px] md:h-[388px] snap-start">
                       {isVideo ? (
@@ -210,7 +210,7 @@ const App: React.FC = () => {
 
                 {/* 3. Render Remaining Images */}
                 {remainingImages.map((media, i) => {
-                  const isVideo = media.toLowerCase().match(/\.(mp4|webm|ogg)$/i);
+                  const isVideo = media.toLowerCase().match(/\.(mp4|webm|ogg)(\?.*)?$/i);
                   return (
                     <div key={`media-end-${i}`} className="shrink-0 w-auto h-[350px] md:h-[388px] snap-start">
                       {isVideo ? (
@@ -254,12 +254,12 @@ const App: React.FC = () => {
           <div className="min-h-full md:h-full flex flex-col p-6 md:p-8">
 
             {/* Top row with 4 columns */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 mb-4 md:mb-6 text-sm font-bold tracking-normal leading-snug">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 mb-4 md:mb-6 text-[11pt] tracking-normal leading-[11pt]">
 
               {/* Col 1 */}
               <div className="flex flex-col gap-2 md:gap-4">
                 <h2>Kalina Ivanova</h2>
-                <p className="text-xs md:text-sm">
+                <p>
                   Diseñadora gráfica y durante estos<br />
                   años he desarrollado proyectos en<br />
                   todas las áreas del diseño, tanto en el<br />
@@ -277,7 +277,7 @@ const App: React.FC = () => {
               </div>
 
               {/* Col 2 */}
-              <div className="flex flex-col gap-2 md:gap-4 text-xs md:text-sm">
+              <div className="flex flex-col gap-2 md:gap-4">
                 <h2>Logros</h2>
                 <div>
                   <p className="mb-2 md:mb-4">
@@ -295,7 +295,7 @@ const App: React.FC = () => {
               </div>
 
               {/* Col 3 */}
-              <div className="flex flex-col gap-2 md:gap-4 text-xs md:text-sm">
+              <div className="flex flex-col gap-2 md:gap-4">
                 <h2>Exposiciones</h2>
                 <div>
                   <p>
@@ -307,7 +307,7 @@ const App: React.FC = () => {
               </div>
 
               {/* Col 4 */}
-              <div className="flex flex-col gap-2 md:gap-4 text-xs md:text-sm">
+              <div className="flex flex-col gap-2 md:gap-4">
                 <h2>Estudios</h2>
                 <div>
                   <p className="mb-2 md:mb-4">
@@ -334,7 +334,7 @@ const App: React.FC = () => {
             </div>
 
             {/* Bottom row */}
-            <div className="mt-4 flex flex-col md:flex-row justify-between items-center md:items-end font-bold text-xs md:text-sm">
+            <div className="mt-4 flex flex-col md:flex-row justify-between items-center md:items-end text-[11pt] leading-[11pt]">
               <a href="mailto:hellokaliivanova@gmail.com" className="hover:underline mb-2 md:mb-0">
                 hellokaliivanova@gmail.com
               </a>
@@ -346,7 +346,7 @@ const App: React.FC = () => {
             <button
               type="button"
               aria-label="Cerrar"
-              className="fixed top-4 right-4 md:top-6 md:right-6 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center border border-black bg-transparent hover:bg-black hover:text-white transition-colors z-[70] font-bold md:text-xl"
+              className="fixed top-4 right-4 md:top-6 md:right-6 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center border border-black bg-transparent hover:bg-black hover:text-white transition-colors z-[70] md:text-xl"
               onClick={closeAbout}
             >
               ✕
