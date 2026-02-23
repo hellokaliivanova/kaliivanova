@@ -1,51 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kali Ivanova - Portafolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['"Work Sans"', 'sans-serif'],
-            }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kali Ivanova - Portafolio</title>
+  <!-- Tipografía local Karrik -->
+  <style>
+    @font-face {
+      font-family: 'Karrik';
+      src: url('/tipografia/Karrik-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Karrik';
+      src: url('/tipografia/Karrik-Italic.otf') format('opentype');
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Karrik', 'sans-serif'],
           }
         }
       }
-    </script>
-    <style>
-      /* Custom scrollbar to match the brutalist aesthetic */
-      ::-webkit-scrollbar {
-        width: 6px;
-        height: 6px; /* Added height for horizontal scrollbar */
-      }
-      ::-webkit-scrollbar-track {
-        background: #ffffff;
-        border-top: 1px solid #000;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #000;
-      }
-      /* Specific class for internal scrollbars if needed */
-      .custom-scrollbar::-webkit-scrollbar {
-        width: 3px;
-      }
-      .custom-scrollbar::-webkit-scrollbar-track {
-         background: transparent;
-         border: none;
-      }
-      
-      body {
-        background-color: #ffffff;
-        color: #000;
-      }
-    </style>
+    }
+  </script>
+  <style>
+    /* Custom scrollbar to match the brutalist aesthetic */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+      /* Added height for horizontal scrollbar */
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #ffffff;
+      border-top: 1px solid #000;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #000;
+    }
+
+    /* Specific class for internal scrollbars if needed */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+      border: none;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #000;
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -55,9 +76,11 @@
   }
 }
 </script>
-  </head>
-  <body class="bg-white text-black antialiased font-sans selection:bg-black selection:text-white">
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+</head>
+
+<body class="bg-white text-black antialiased font-sans selection:bg-black selection:text-white">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
 </html>
