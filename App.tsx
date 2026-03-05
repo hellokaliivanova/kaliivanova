@@ -30,20 +30,23 @@ const projects: Project[] = [
     id: 'kopriva',
     name: 'KOPRIVA',
     category: 'LIBRO / ARCHIVO',
+    client: 'TFM',
     year: '2023',
-    description: 'Descripción pendiente para el proyecto KOPRIVA. Por favor, proporciona el texto descriptivo o el HTML de este proyecto para sustituir este marcador de posición. Este espacio está reservado para explicar el concepto, la técnica y el contexto del diseño.'
+    description: 'Me llamo Kalina y nací en Bulgaria.\nEn 2005 fuimos a España a ver a mi padre sin saber que sería nuestro nuevo hogar. Igual que mis tatarabuelos, pero sus circunstancias fueron muy diferentes, tuvieron que abandonar su hogar por un genocidio a causa de la Primera Guerra de los Balcanes (1912-13).\n\nHace un año, observando mi pequeño álbum familiar descubrí una fotografía de mis tatarabuelos, Mariya y Stoyu Dapkovi, gracias a esta fotografía me invadió la curiosidad de conocer quiénes fueron. Eran búlgaros tracios vivieron en Goliam Dervent, un pueblo ubicado en la parte de Grecia, cerca de Bulgaria donde hace unos milenios vivieron los tracios, primera civilización que ocupó en el territorio.\n\nDescubrí que ellos también tuvieron que abandonar su hogar, pero su caso fue muy diferente, porque los echaron. Eran refugiados a causa de La Guerra de los Balcanes (1912-1913). La guerra ya había acabado, el otoño acababa de llegar, pero la paz estaba muy lejos de llegar. Un día sucedió lo que más temían: los turcos provocaron un genocidio, irrumpieron en muchos pueblos, persiguieron y mataron a aldeanos.\n\nMis tatarabuelos cogieron lo que pudieron y huyeron con sus familias a Bulgaria.\n\nKopriva pone en valor el álbum familiar como elemento de identidad de mi familia. Kopriva es hogar.\n\nProyecto galardonado con oro en los premios ADCV en la sección estudiante.\n\nhttps://premiosadcv.com/proyectos/kopriva/'
   },
   {
     id: 'tirant',
     name: 'TIRANT',
     category: 'BRANDING / COMUNICACIÓN / PACKAGING',
+    client: 'TIRANT.STORE',
     year: '2023',
-    description: 'Descripción pendiente para el proyecto TIRANT. Por favor, proporciona el texto descriptivo o el HTML de este proyecto. Aquí se detallarán los desafíos tipográficos y la dirección de arte tomada para esta pieza.'
+    description: 'Diseño de marca para un pequeño taller de artesanía de productos de cuero Tirant.store, ubicado en la ciudad de València.\n\nTipografia display serif Magalie diseñada por Mark van Leeuwen.'
   },
   {
     id: 'festes-mislata',
     name: 'FESTES MISLATA',
     category: 'CARTELERÍA / CAMPAÑA',
+    client: 'AJUNTAMENT DE MISLATA',
     year: '2022',
     description: 'Descripción pendiente para FESTES MISLATA. Este proyecto probablemente abarca la identidad visual y comunicación para las fiestas locales. Necesito el texto original para completar esta sección con la narrativa correcta.'
   },
@@ -51,6 +54,7 @@ const projects: Project[] = [
     id: 'ino',
     name: 'INO',
     category: 'BRANDING',
+    client: 'INO-BG',
     year: '2024',
     description: 'Descripción pendiente para INO. Por favor, proporciona el texto descriptivo para este proyecto.',
     descriptionIndex: 4
@@ -59,8 +63,15 @@ const projects: Project[] = [
     id: 'melancolia',
     name: 'MELANCOLÍA',
     category: 'LIBRO / ENCUADERNACIÓN',
+    client: 'PROYECTO PERSONAL',
     year: '2024',
-    description: 'Este proyecto surge de la convicción de que el valor filosófico de la película Melancolía del director danés Lars Von Trier proviene de una utilización del lenguaje cinematográfico que permite transmitir, en un contexto apocalíptico, la experiencia de la angustia en su lectura antropológica, ontológica y ética.\n\nMelancolía es una película que utiliza el fin (apocalipsis) como una tragedia íntima; describir el alma. Mediante el libro se reflexiona sobre las emociones —y la inevitabilidad ante el fin del mundo— que puede el individuo experimentar en un estado trágico o apocalíptico.'
+    description: 'Este proyecto surge de la convicción de que el valor filosófico de la película Melancolía del director danés Lars Von Trier proviene de una utilización del lenguaje cinematográfico que permite transmitir, en un contexto apocalíptico, la experiencia de la angustia en su lectura antropológica, ontológica y ética.\n\nMelancolía es una película que utiliza el fin (apocalipsis) como una tragedia íntima; describir el alma. Mediante el libro se reflexiona sobre las emociones —y la inevitabilidad ante el fin del mundo— que puede el individuo experimentar en un estado trágico o apocalíptico.',
+    extraCards: [
+      {
+        afterMediaSubstring: '05_melancolia',
+        text: 'Basándome en el análisis de influencias artísticas, literarias y filisóficas. Considero que el libro necesita una tipografía que debe transmitir unos valores emocionales con un toque transgresor. \n\nPor lo tanto la tipografía Fea ha sido seleccionada por su estructura humanista sans serif, tiene una modulación contrastada con detalles que rompen su morfología homogénea que ayuda a transmitir ese tono transgresor del largometraje. La tipografía Fea ha sido diseñada por Víctor Guerrero para la revista NEO2.'
+      }
+    ]
   }
 ];
 
@@ -91,7 +102,7 @@ const ProjectDescriptionCard: React.FC<{ project: Project }> = ({ project }) => 
       <div ref={scrollRef} className="overflow-y-auto pr-2 custom-scrollbar h-full" onScroll={handleScroll}>
         <p className="whitespace-pre-wrap">{project.description}</p>
       </div>
-      {project.id === 'melancolia' && !isAtBottom && (
+      {['melancolia', 'kopriva'].includes(project.id) && !isAtBottom && (
         <div className="absolute bottom-4 right-2 md:bottom-8 md:right-3 flex justify-end opacity-80 animate-pulse pointer-events-none transition-opacity duration-300">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -141,8 +152,8 @@ const App: React.FC = () => {
         <div className="grid grid-cols-3 border-t border-b border-black bg-white">
           <div className="px-3 py-2">PROYECTO</div>
           <div className="px-3 py-2">CATEGORÍA</div>
-          <div className="px-3 py-2 flex justify-between text-gray-400">
-            {/* Empty space */}
+          <div className="px-3 py-2 flex justify-between">
+            <span>CLIENTE</span>
           </div>
         </div>
       </header>
@@ -167,8 +178,8 @@ const App: React.FC = () => {
                 <div className="px-3 py-2 border-b md:border-b-0 flex items-center">
                   {project.category}
                 </div>
-                <div className="px-3 py-2 flex items-center text-gray-500">
-                  {/* Empty space */}
+                <div className="px-3 py-2 flex items-center">
+                  {project.client}
                 </div>
               </div>
 
@@ -211,29 +222,41 @@ const App: React.FC = () => {
                 {/* 3. Render Remaining Images */}
                 {remainingImages.map((media, i) => {
                   const isVideo = media.toLowerCase().match(/\.(mp4|webm|ogg)(\?.*)?$/i);
+                  const matchingExtraCards = project.extraCards?.filter(card => media.includes(card.afterMediaSubstring)) || [];
+
                   return (
-                    <div key={`media-end-${i}`} className="shrink-0 w-auto h-[350px] md:h-[388px] snap-start">
-                      {isVideo ? (
-                        <video
-                          src={media}
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="w-auto h-full object-contain md:object-cover block"
-                        />
-                      ) : (
-                        <img
-                          src={media}
-                          alt={`Project ${project.name} media ${i + 4}`}
-                          className="w-auto h-full object-contain md:object-cover block"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.src = `https://placehold.co/600x800/f0f0f0/333333?text=${project.id}+${i + 4}`;
-                          }}
-                        />
-                      )}
-                    </div>
+                    <React.Fragment key={`media-end-fragment-${i}`}>
+                      <div key={`media-end-${i}`} className="shrink-0 w-auto h-[350px] md:h-[388px] snap-start">
+                        {isVideo ? (
+                          <video
+                            src={media}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="w-auto h-full object-contain md:object-cover block"
+                          />
+                        ) : (
+                          <img
+                            src={media}
+                            alt={`Project ${project.name} media ${i + 4}`}
+                            className="w-auto h-full object-contain md:object-cover block"
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              target.src = `https://placehold.co/600x800/f0f0f0/333333?text=${project.id}+${i + 4}`;
+                            }}
+                          />
+                        )}
+                      </div>
+                      {/* Render extra texts immediately following this media, if any */}
+                      {matchingExtraCards.map((card, cardIndex) => (
+                        <div key={`extra-card-${i}-${cardIndex}`} className="shrink-0 relative w-screen md:min-w-[310px] md:w-[310px] h-[350px] md:h-[388px] p-4 md:p-8 text-left leading-[11pt] text-[11pt] normal-case flex flex-col justify-between overflow-hidden snap-start bg-black text-white">
+                          <div className="overflow-y-auto pr-2 custom-scrollbar h-full">
+                            <p className="whitespace-pre-wrap">{card.text}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </React.Fragment>
                   );
                 })}
 
@@ -244,7 +267,7 @@ const App: React.FC = () => {
 
         {/* Footer */}
         <div className="p-3 border-t border-black bg-white text-xs">
-          TÉRMINOS Y CONDICIONES
+          KALINA IVANOVA
         </div>
       </main>
 
