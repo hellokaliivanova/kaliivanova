@@ -47,8 +47,8 @@ const projects: Project[] = [
     name: 'FESTES MISLATA',
     category: 'CARTELERÍA / CAMPAÑA',
     client: 'AJUNTAMENT DE MISLATA',
-    year: '2022',
-    description: 'Descripción pendiente para FESTES MISLATA. Este proyecto probablemente abarca la identidad visual y comunicación para las fiestas locales. Necesito el texto original para completar esta sección con la narrativa correcta.'
+    year: '2024',
+    description: 'Dirección creativa para las fiestas patronales y populares de Mislata 2024. El nuevo diseño de la imagen para las fiestas refleja su tradición y vitalidad. La icónica estatua "Almassil" de Miquel Navarro, como protagonista y representante de las fiestas. Con una estética moderna y vibrante, utiliza colores vivos y elementos que conectan la historia local con el presente. Esta identidad visual celebra la energía y alegría que caracteriza las festividades.\n\nDesde el departamento de comunicación nos encargamos en crear un sistema visual para todo tipo de soportes, tanto analógicos como digitales: cartelería para redes sociales y web, mupis e información en paradas de bus, lonas para escenarios, señalética, folleto y merch.\n\nEQUIPO CREATIVO\n\nCruz Sánchez y Kalina Ivanova\n\nTAGS\nDIRECCIÓN CREATIVA SISTEMA VISUAL RRSS RETAIL'
   },
   {
     id: 'ino',
