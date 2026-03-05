@@ -48,6 +48,7 @@ const projects: Project[] = [
     category: 'CARTELERÍA / CAMPAÑA',
     client: 'AJUNTAMENT DE MISLATA',
     year: '2024',
+    descriptionIndex: 1,
     description: `Dirección creativa para las fiestas patronales y populares de Mislata 2024. El nuevo diseño de la imagen para las fiestas refleja su tradición y vitalidad. La icónica estatua "Almassil" de Miquel Navarro, como protagonista y representante de las fiestas. Con una estética moderna y vibrante, utiliza colores vivos y elementos que conectan la historia local con el presente. Esta identidad visual celebra la energía y alegría que caracteriza las festividades.
 
 Desde el departamento de comunicación nos encargamos en crear un sistema visual para todo tipo de soportes, tanto analógicos como digitales: cartelería para redes sociales y web, mupis e información en paradas de bus, lonas para escenarios, señalética, folleto y merch.
@@ -66,7 +67,11 @@ DIRECCIÓN CREATIVA SISTEMA VISUAL RRSS RETAIL`
     category: 'BRANDING',
     client: 'INO-BG',
     year: '2024',
-    description: 'Descripción pendiente para INO. Por favor, proporciona el texto descriptivo para este proyecto.',
+    description: `La marca ИНО, escrita en cirílico, se pronuncia "INO" y está dirigida exclusivamente al mercado nacional de Bulgaria. Es una empresa familiar pequeña en la ciudad costera Varna especializada en la industria de la moda desde los 90.
+
+Sin perder la esencia de la marca al ser un oficio artesanal y manual, se escogió una tipografía como base que represente esos valores. Para lograrlo, busqué una tipografía scripta que tuviera una morfología más redondeada y amable. 
+
+Finalmente, seleccioné la tipografía "Nickainley Normal" que tenía los idiomas del latín y el cirílico. Su morfología me permitió representar la forma orgánica de un hilo y así crear el logotipo.`,
     descriptionIndex: 4
   },
   {
