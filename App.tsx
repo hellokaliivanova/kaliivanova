@@ -60,7 +60,13 @@ const projects: Project[] = [
     name: 'MELANCOLÍA',
     category: 'LIBRO / ENCUADERNACIÓN',
     year: '2024',
-    description: 'Este proyecto surge de la convicción de que el valor filosófico de la película Melancolía del director danés Lars Von Trier proviene de una utilización del lenguaje cinematográfico que permite transmitir, en un contexto apocalíptico, la experiencia de la angustia en su lectura antropológica, ontológica y ética.\n\nMelancolía es una película que utiliza el fin (apocalipsis) como una tragedia íntima; describir el alma. Mediante el libro se reflexiona sobre las emociones —y la inevitabilidad ante el fin del mundo— que puede el individuo experimentar en un estado trágico o apocalíptico.'
+    description: 'Este proyecto surge de la convicción de que el valor filosófico de la película Melancolía del director danés Lars Von Trier proviene de una utilización del lenguaje cinematográfico que permite transmitir, en un contexto apocalíptico, la experiencia de la angustia en su lectura antropológica, ontológica y ética.\n\nMelancolía es una película que utiliza el fin (apocalipsis) como una tragedia íntima; describir el alma. Mediante el libro se reflexiona sobre las emociones —y la inevitabilidad ante el fin del mundo— que puede el individuo experimentar en un estado trágico o apocalíptico.',
+    extraCards: [
+      {
+        afterMediaSubstring: '05_melancolia',
+        text: 'Basándome en el análisis de influencias artísticas, literarias y filisóficas. Considero que el libro necesita una tipografía que debe transmitir unos valores emocionales con un toque transgresor. \n\nPor lo tanto la tipografía Fea ha sido seleccionada por su estructura humanista sans serif, tiene una modulación contrastada con detalles que rompen su morfología homogénea que ayuda a transmitir ese tono transgresor del largometraje. La tipografía Fea ha sido diseñada por Víctor Guerrero para la revista NEO2.'
+      }
+    ]
   }
 ];
 
@@ -211,29 +217,41 @@ const App: React.FC = () => {
                 {/* 3. Render Remaining Images */}
                 {remainingImages.map((media, i) => {
                   const isVideo = media.toLowerCase().match(/\.(mp4|webm|ogg)(\?.*)?$/i);
+                  const matchingExtraCards = project.extraCards?.filter(card => media.includes(card.afterMediaSubstring)) || [];
+
                   return (
-                    <div key={`media-end-${i}`} className="shrink-0 w-auto h-[350px] md:h-[388px] snap-start">
-                      {isVideo ? (
-                        <video
-                          src={media}
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="w-auto h-full object-contain md:object-cover block"
-                        />
-                      ) : (
-                        <img
-                          src={media}
-                          alt={`Project ${project.name} media ${i + 4}`}
-                          className="w-auto h-full object-contain md:object-cover block"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.src = `https://placehold.co/600x800/f0f0f0/333333?text=${project.id}+${i + 4}`;
-                          }}
-                        />
-                      )}
-                    </div>
+                    <React.Fragment key={`media-end-fragment-${i}`}>
+                      <div key={`media-end-${i}`} className="shrink-0 w-auto h-[350px] md:h-[388px] snap-start">
+                        {isVideo ? (
+                          <video
+                            src={media}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="w-auto h-full object-contain md:object-cover block"
+                          />
+                        ) : (
+                          <img
+                            src={media}
+                            alt={`Project ${project.name} media ${i + 4}`}
+                            className="w-auto h-full object-contain md:object-cover block"
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              target.src = `https://placehold.co/600x800/f0f0f0/333333?text=${project.id}+${i + 4}`;
+                            }}
+                          />
+                        )}
+                      </div>
+                      {/* Render extra texts immediately following this media, if any */}
+                      {matchingExtraCards.map((card, cardIndex) => (
+                        <div key={`extra-card-${i}-${cardIndex}`} className="shrink-0 relative w-screen md:min-w-[310px] md:w-[310px] h-[350px] md:h-[388px] p-4 md:p-8 text-left leading-[11pt] text-[11pt] normal-case flex flex-col justify-between overflow-hidden snap-start bg-black text-white">
+                          <div className="overflow-y-auto pr-2 custom-scrollbar h-full">
+                            <p className="whitespace-pre-wrap">{card.text}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </React.Fragment>
                   );
                 })}
 

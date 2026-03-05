@@ -6,4 +6,5 @@ export interface Project {
   description: string;
   descriptionIndex?: number;
   images?: string[];
+  extraCards?: { afterMediaSubstring: string; text: string }[];
 }
