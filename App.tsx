@@ -31,7 +31,7 @@ const projects: Project[] = [
     name: 'KOPRIVA',
     category: 'LIBRO / ARCHIVO',
     year: '2023',
-    description: 'Descripción pendiente para el proyecto KOPRIVA. Por favor, proporciona el texto descriptivo o el HTML de este proyecto para sustituir este marcador de posición. Este espacio está reservado para explicar el concepto, la técnica y el contexto del diseño.'
+    description: 'Me llamo Kalina y nací en Bulgaria. \nEn 2005 fuimos a España a ver a mi padre sin saber que sería nuestro nuevo hogar. Igual que mis tatarabuelos, pero sus circunstancias fueron muy diferentes, tuvieron que abandonar su hogar por un genocidio a causa de la Primera Guerra de los Balcanes (1912-13).\n\nHace un año, observando mi pequeño álbum familiar descubrí una fotografía de mis tatarabuelos, Mariya y Stoyu Dapkovi, gracias a esta fotografía me invadió la curiosidad de conocer quiénes fueron. Eran búlgaros tracios vivieron en Goliam Dervent, un pueblo ubicado en la parte de Grecia, cerca de Bulgaria donde hace unos milenios vivieron los tracios, primera civilización que ocupó en el territorio. Descubrí que ellos también tuvieron que abandonar su hogar, pero su caso fue muy diferente, porque los echaron. Eran refugiados a causa de La Guerra de los Balcanes (1912-1913). La guerra ya había acabado, el otoño acababa de llegar, pero la paz estaba muy lejos de llegar. Un día sucedió lo que más temían: los turcos provocaron un genocidio, irrumpieron en muchos pueblos, persiguieron y mataron a aldeanos. Mis tatarabuelos cogieron lo que pudieron y huyeron con sus familias a Bulgaria.\n\nKopriva pone en valor el álbum familiar como elemento de identidad de mi familia. Kopriva es hogar.'
   },
   {
     id: 'tirant',
@@ -91,7 +91,7 @@ const ProjectDescriptionCard: React.FC<{ project: Project }> = ({ project }) => 
       <div ref={scrollRef} className="overflow-y-auto pr-2 custom-scrollbar h-full" onScroll={handleScroll}>
         <p className="whitespace-pre-wrap">{project.description}</p>
       </div>
-      {project.id === 'melancolia' && !isAtBottom && (
+      {(project.id === 'melancolia' || project.id === 'kopriva') && !isAtBottom && (
         <div className="absolute bottom-4 right-2 md:bottom-8 md:right-3 flex justify-end opacity-80 animate-pulse pointer-events-none transition-opacity duration-300">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <line x1="12" y1="5" x2="12" y2="19"></line>
