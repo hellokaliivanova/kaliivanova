@@ -30,6 +30,7 @@ const projects: Project[] = [
     id: 'kopriva',
     name: 'KOPRIVA',
     category: 'LIBRO / ARCHIVO',
+    client: 'TFM',
     year: '2023',
     description: 'Me llamo Kalina y nací en Bulgaria.\nEn 2005 fuimos a España a ver a mi padre sin saber que sería nuestro nuevo hogar. Igual que mis tatarabuelos, pero sus circunstancias fueron muy diferentes, tuvieron que abandonar su hogar por un genocidio a causa de la Primera Guerra de los Balcanes (1912-13).\n\nHace un año, observando mi pequeño álbum familiar descubrí una fotografía de mis tatarabuelos, Mariya y Stoyu Dapkovi, gracias a esta fotografía me invadió la curiosidad de conocer quiénes fueron. Eran búlgaros tracios vivieron en Goliam Dervent, un pueblo ubicado en la parte de Grecia, cerca de Bulgaria donde hace unos milenios vivieron los tracios, primera civilización que ocupó en el territorio.\n\nDescubrí que ellos también tuvieron que abandonar su hogar, pero su caso fue muy diferente, porque los echaron. Eran refugiados a causa de La Guerra de los Balcanes (1912-1913). La guerra ya había acabado, el otoño acababa de llegar, pero la paz estaba muy lejos de llegar. Un día sucedió lo que más temían: los turcos provocaron un genocidio, irrumpieron en muchos pueblos, persiguieron y mataron a aldeanos.\n\nMis tatarabuelos cogieron lo que pudieron y huyeron con sus familias a Bulgaria.\n\nKopriva pone en valor el álbum familiar como elemento de identidad de mi familia. Kopriva es hogar.\n\nProyecto galardonado con oro en los premios ADCV en la sección estudiante.\n\nhttps://premiosadcv.com/proyectos/kopriva/'
   },
@@ -37,13 +38,15 @@ const projects: Project[] = [
     id: 'tirant',
     name: 'TIRANT',
     category: 'BRANDING / COMUNICACIÓN / PACKAGING',
+    client: 'TIRANT.STORE',
     year: '2023',
-    description: 'Descripción pendiente para el proyecto TIRANT. Por favor, proporciona el texto descriptivo o el HTML de este proyecto. Aquí se detallarán los desafíos tipográficos y la dirección de arte tomada para esta pieza.'
+    description: 'Diseño de marca para un pequeño taller de artesanía de productos de cuero Tirant.store, ubicado en la ciudad de València.\n\nTipografia display serif Magalie diseñada por Mark van Leeuwen.'
   },
   {
     id: 'festes-mislata',
     name: 'FESTES MISLATA',
     category: 'CARTELERÍA / CAMPAÑA',
+    client: 'AJUNTAMENT DE MISLATA',
     year: '2022',
     description: 'Descripción pendiente para FESTES MISLATA. Este proyecto probablemente abarca la identidad visual y comunicación para las fiestas locales. Necesito el texto original para completar esta sección con la narrativa correcta.'
   },
@@ -51,6 +54,7 @@ const projects: Project[] = [
     id: 'ino',
     name: 'INO',
     category: 'BRANDING',
+    client: 'INO-BG',
     year: '2024',
     description: 'Descripción pendiente para INO. Por favor, proporciona el texto descriptivo para este proyecto.',
     descriptionIndex: 4
@@ -59,6 +63,7 @@ const projects: Project[] = [
     id: 'melancolia',
     name: 'MELANCOLÍA',
     category: 'LIBRO / ENCUADERNACIÓN',
+    client: 'PROYECTO PERSONAL',
     year: '2024',
     description: 'Este proyecto surge de la convicción de que el valor filosófico de la película Melancolía del director danés Lars Von Trier proviene de una utilización del lenguaje cinematográfico que permite transmitir, en un contexto apocalíptico, la experiencia de la angustia en su lectura antropológica, ontológica y ética.\n\nMelancolía es una película que utiliza el fin (apocalipsis) como una tragedia íntima; describir el alma. Mediante el libro se reflexiona sobre las emociones —y la inevitabilidad ante el fin del mundo— que puede el individuo experimentar en un estado trágico o apocalíptico.',
     extraCards: [
@@ -147,8 +152,8 @@ const App: React.FC = () => {
         <div className="grid grid-cols-3 border-t border-b border-black bg-white">
           <div className="px-3 py-2">PROYECTO</div>
           <div className="px-3 py-2">CATEGORÍA</div>
-          <div className="px-3 py-2 flex justify-between text-gray-400">
-            {/* Empty space */}
+          <div className="px-3 py-2 flex justify-between">
+            <span>CLIENTE</span>
           </div>
         </div>
       </header>
@@ -173,8 +178,8 @@ const App: React.FC = () => {
                 <div className="px-3 py-2 border-b md:border-b-0 flex items-center">
                   {project.category}
                 </div>
-                <div className="px-3 py-2 flex items-center text-gray-500">
-                  {/* Empty space */}
+                <div className="px-3 py-2 flex items-center">
+                  {project.client}
                 </div>
               </div>
 
@@ -262,7 +267,7 @@ const App: React.FC = () => {
 
         {/* Footer */}
         <div className="p-3 border-t border-black bg-white text-xs">
-          TÉRMINOS Y CONDICIONES
+          KALINA IVANOVA
         </div>
       </main>
 
