@@ -144,7 +144,7 @@ const App: React.FC = () => {
           <div className="flex">
             {/* Removed border-r here as requested */}
             <div className="px-3 py-2 flex items-center">
-              © 2026 KALI IVANOVA
+              KALI IVANOVA
             </div>
           </div>
 
