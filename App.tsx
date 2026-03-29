@@ -298,19 +298,7 @@ const App: React.FC = () => {
               <div className="flex flex-col gap-2 md:gap-4">
                 <h2>Kalina Ivanova</h2>
                 <p>
-                  Diseñadora gráfica y durante estos<br />
-                  años he desarrollado proyectos en<br />
-                  todas las áreas del diseño, tanto en el<br />
-                  ámbito cultural como comercial. Mi<br />
-                  metodología se basa en una constante<br />
-                  búsqueda de nuevas formas de crear<br />
-                  sistemas e ideas que comuniquen de<br />
-                  la mejor manera un concepto. Detrás<br />
-                  de una identidad debe haber una<br />
-                  narrativa y comunicar un mensaje que<br />
-                  crea un vínculo con el público. Ya sea a<br />
-                  través de la divulgación, la sorpresa,<br />
-                  la nostalgia o la estética.
+                  Diseñadora gráfica que, a lo largo de estos años, ha trabajado en proyectos en distintas áreas del diseño, tanto en el ámbito cultural como en el comercial. Mi enfoque se basa en una búsqueda constante de nuevas maneras de crear sistemas e ideas que comuniquen un concepto de forma eficaz. Considero que toda identidad debe construirse a partir de una narrativa sólida, capaz de transmitir un mensaje que conecte con el público, ya sea mediante la divulgación, la sorpresa, la nostalgia o la estética.
                 </p>
               </div>
 
@@ -336,9 +324,19 @@ const App: React.FC = () => {
               <div className="flex flex-col gap-2 md:gap-4">
                 <h2>Exposiciones</h2>
                 <div>
+                  <p className="mb-2 md:mb-4">
+                    <a href="https://www.adcv.com/inauguracion-expo-premios-adcv/" target="_blank" rel="noreferrer" className="hover:underline">
+                      Exposición en LAS NAVES<br />
+                      Premios ADCV 2024
+                    </a><br />
+                    Proyecto: Kopriva
+                  </p>
                   <p>
-                    Exposición en LAS NAVES<br />
-                    Premios ADCV 2024<br />
+                    2026<br />
+                    Exposición en CCCC (Centro del Carmen de Cultura Contemporánea)<br />
+                    <a href="https://www.consorcimuseus.gva.es/exposicion/lescola-dart-i-superior-de-disseny-175-anys-al-cor-de-valencia/?lang=es" target="_blank" rel="noreferrer" className="hover:underline">
+                      L’ESCOLA D’ART I SUPERIOR DE DISSENY. 175 ANYS AL COR DE VALÈNCIA
+                    </a><br />
                     Proyecto: Kopriva
                   </p>
                 </div>
